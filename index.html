@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sandeep Kodoli | Atmospheric Scientist</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sandeep Kodoli is an atmospheric scientist at the University of Strathclyde, Glasgow, working on urban CO₂ inverse modelling with WRF–STILT, Bayesian inversion and the BEACO₂N sensor network.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single column reading page; sticky nav; hero = portrait + intro; research split in two themes (urban CO2 / Himalayan aerosol); field gallery; publication list */
+:root{
+  --bg:#f5f7f8; --surface:#ffffff; --ink:#15212b; --muted:#566673; --line:#d9e0e5;
+  --accent:#1f5f8b; --accent-soft:#e3edf4; --carbon:#2b2b2b;
+  --display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10171d; --surface:#172129; --ink:#e4eaee; --muted:#9aabb8; --line:#2a3741;
+  --accent:#7fb6dc; --accent-soft:#1c2e3b; --carbon:#e4eaee; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10171d; --surface:#172129; --ink:#e4eaee; --muted:#9aabb8; --line:#2a3741;
+  --accent:#7fb6dc; --accent-soft:#1c2e3b; --carbon:#e4eaee; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;line-height:1.2;margin:0}
+.wrap{max-width:960px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:10;background:var(--bg)}
+nav{position:sticky;top:env(safe-area-inset-top, 0px);z-index:5;background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);text-decoration:none}
+.navlinks{display:flex;gap:20px;flex-wrap:wrap}
+.navlinks a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+.navlinks a:hover{color:var(--ink)}
+@media (max-width:640px){.navlinks{display:none}}
+
+header.hero{padding-block:56px 40px}
+.hero .wrap{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:center}
+.portrait{width:220px;max-width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;border:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.hero h1{font-size:clamp(34px,5vw,48px);margin-bottom:14px}
+.hero p.lede{font-size:17.5px;max-width:62ch;margin:0 0 20px;color:var(--ink)}
+.hero .wrap>div{min-width:0}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);text-decoration:none;font-size:14px;font-weight:500}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn.primary:hover{opacity:.9;color:var(--bg)}
+.email-line{font-family:var(--mono);font-size:13.5px;color:var(--muted);margin-top:14px;user-select:all}
+@media (max-width:700px){.hero .wrap{grid-template-columns:1fr;gap:24px}.portrait{width:160px}}
+
+.sites{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.sites span b{color:var(--ink);font-weight:500}
+
+section{padding-block:44px;border-top:1px solid var(--line)}
+section h2{font-size:28px;margin-bottom:22px}
+.sub{color:var(--muted);max-width:65ch;margin:-10px 0 24px}
+
+.news{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.news li{display:grid;grid-template-columns:96px 1fr;gap:16px}
+.news li>span:last-child{min-width:0}
+.date{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
+
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.theme{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.theme .meta{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--accent);text-transform:uppercase}
+.theme h3{font-size:21px}
+.theme p{margin:0;color:var(--ink)}
+.theme ul{margin:4px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
+.tag{font-family:var(--mono);font-size:11.5px;padding:3px 8px;border-radius:4px;background:var(--accent-soft);color:var(--ink)}
+@media (max-width:760px){.themes{grid-template-columns:1fr}}
+
+.gallery{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:12px}
+.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:6px;background:var(--surface)}
+.gallery img{display:block;width:100%;height:100%;object-fit:cover}
+.gallery figure:first-child{grid-row:span 2}
+.gallery figcaption{font-size:13.5px;color:var(--muted);padding:8px 2px 0}
+.gallery figure{background:transparent}
+.gallery figure img{border-radius:6px}
+.gallery .ph{aspect-ratio:4/3}
+.gallery figure:first-child .ph{aspect-ratio:auto;height:calc(100% - 34px)}
+.field-note{max-width:65ch;margin:0 0 22px}
+@media (max-width:700px){.gallery{grid-template-columns:1fr}.gallery figure:first-child{grid-row:auto}.gallery figure:first-child .ph{aspect-ratio:4/3;height:auto}}
+
+.pubs{list-style:none;margin:0;padding:0;counter-reset:p}
+.pubs li{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:56px 1fr;gap:12px}
+.pubs li:last-child{border-bottom:0}
+.pubs .yr{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:2px;font-variant-numeric:tabular-nums}
+.pubs .t{font-weight:600;display:block;margin-bottom:2px}
+.pubs .a{color:var(--muted);font-size:14.5px}
+.pubs .a b{color:var(--ink);font-weight:600}
+.pubs .j{font-size:14.5px;font-style:italic}
+.pubs .doi{font-family:var(--mono);font-size:12.5px;margin-left:6px}
+.pubs li>div{min-width:0;overflow-wrap:anywhere}
+h3.group{font-family:var(--body);font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:28px 0 4px}
+h3.group:first-of-type{margin-top:0}
+
+.timeline{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.timeline li{display:grid;grid-template-columns:150px 1fr;gap:18px}
+.timeline li>div{min-width:0}
+.timeline .role{font-weight:600}
+.timeline .org{color:var(--muted);font-size:15px}
+@media (max-width:560px){.timeline li,.news li{grid-template-columns:1fr;gap:2px}.pubs li{grid-template-columns:1fr;gap:2px}}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.cols>div{min-width:0}
+.cols ul{margin:0;padding-left:18px;display:grid;gap:8px}
+@media (max-width:700px){.cols{grid-template-columns:1fr}}
+
+footer{border-top:1px solid var(--line);padding-block:28px 40px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">Sandeep Kodoli</a>
+    <div class="navlinks">
+      <a href="#research">Research</a>
+      <a href="#fieldwork">Fieldwork</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <img class="portrait" src="assets/images/portrait.jpg" alt="Portrait of Sandeep Kodoli">
+    <div>
+      <p class="eyebrow">Atmospheric Scientist · University of Strathclyde</p>
+      <h1>Sandeep Kodoli, PhD</h1>
+      <p class="lede">I estimate where a city's CO₂ comes from by combining low-cost sensor measurements with atmospheric transport models. At Strathclyde I lead the urban emissions work in the GEMINOA project, using the BEACO₂N sensor network, WRF–STILT footprints and Bayesian inversion to map Glasgow's emissions at city and neighbourhood scale. Before this, I spent several years measuring black carbon on a Himalayan glacier.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:sandeep.kodoli@strath.ac.uk">Email me</a>
+        <a class="btn" href="#publications">Publications</a>
+        <!-- EDIT: paste your profile URLs and uncomment
+        <a class="btn" href="https://www.researchgate.net/profile/YOUR-PROFILE">ResearchGate</a>
+        <a class="btn" href="https://www.linkedin.com/in/YOUR-PROFILE">LinkedIn</a>
+        <a class="btn" href="https://scholar.google.com/citations?user=YOUR-ID">Google Scholar</a>
+        -->
+      </div>
+      <p class="email-line">sandeep.kodoli@strath.ac.uk</p>
+      <div class="sites" aria-label="Study sites">
+        <span><b>Glasgow</b> 55.86° N, 4.25° W</span>
+        <span><b>Satopanth Glacier</b> ~4,000 m a.s.l.</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="news">
+  <div class="wrap">
+    <h2>News</h2>
+    <ul class="news">
+      <li><span class="date">2026</span><span>Paper on comparing carbon emissions perspectives for a single city published in <i>Environmental Research Communications</i>.</span></li>
+      <li><span class="date">Oct 2025</span><span>Invited talk on urban emission estimation using inverse modelling at the University of Reading.</span></li>
+      <li><span class="date">May 2025</span><span>Presented sensor-driven CO₂ inverse modelling for Glasgow at EGU General Assembly 2025, Vienna.</span></li>
+      <li><span class="date">Dec 2024</span><span>Presented Glasgow emissions work at the AGU Annual Meeting.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research</h2>
+    <p class="sub">Two threads run through my work: measuring what is in the air, and working backwards from those measurements to where it came from.</p>
+    <div class="themes">
+      <article class="theme">
+        <span class="meta">2023 – present · Glasgow</span>
+        <h3>Urban CO₂ emissions from sensor networks</h3>
+        <p>I run the city-scale CO₂ inversion for Glasgow, working with ICLEI – Local Governments for Sustainability, UC Berkeley and Glasgow City Council.</p>
+        <ul>
+          <li>WRF–STILT modelling chain at 300 m to 3 km resolution, producing hourly footprints</li>
+          <li>Bayesian inversion combining BEACO₂N observations, footprints and prior inventories</li>
+          <li>Low Emission Zone analysis, network design and model configuration for lower uncertainty</li>
+        </ul>
+        <div class="tags"><span class="tag">WRF–STILT</span><span class="tag">Bayesian inversion</span><span class="tag">BEACO₂N</span><span class="tag">MRV</span></div>
+      </article>
+      <article class="theme">
+        <span class="meta">2015 – 2023 · Central Himalaya</span>
+        <h3>Black carbon and aerosols over Himalayan glaciers</h3>
+        <p>For my PhD at IITM Pune I set up and ran a high-altitude station on Satopanth Glacier to measure black carbon and other aerosol properties.</p>
+        <ul>
+          <li>Separated local biomass burning from long-range transport from the Indo-Gangetic Plain</li>
+          <li>Estimated aerosol direct radiative forcing and atmospheric heating rates</li>
+          <li>Combined ground observations with satellite and reanalysis data</li>
+        </ul>
+        <div class="tags"><span class="tag">Black carbon</span><span class="tag">Radiative forcing</span><span class="tag">FLEXPART</span><span class="tag">Fieldwork</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="fieldwork">
+  <div class="wrap">
+    <h2>Fieldwork on Satopanth Glacier</h2>
+    <p class="field-note">Running an observatory at around 4,000 m meant carrying every instrument, battery and box up the valley by foot, then keeping it all working in a tent through the season.</p>
+    <div class="gallery">
+      <figure>
+        <img class="ph" src="assets/images/base-camp.jpg" alt="Three researchers standing at a tented base camp below a snow-covered Himalayan peak" loading="lazy">
+        <figcaption>Base camp below the peaks of the Satopanth valley.</figcaption>
+      </figure>
+      <figure>
+        <img class="ph" src="assets/images/instrument-tent.jpg" alt="Sandeep standing beside an orange tent housing aerosol instruments" loading="lazy">
+        <figcaption>The instrument tent housing the aerosol measurements.</figcaption>
+      </figure>
+      <figure>
+        <img class="ph" src="assets/images/river-crossing.jpg" alt="Porters carrying instrument boxes in baskets across a glacial stream" loading="lazy">
+        <figcaption>Porters carrying instrument boxes across a glacial stream.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+
+    <h3 class="group">Journal articles</h3>
+    <ol class="pubs">
+      <li><span class="yr">2026</span><div><span class="t">A comparison of carbon emissions perspectives for a single city and insights for data developers and policymakers</span><span class="a">Allan, G., Kilian, L., <b>Kodoli, S.</b> et al.</span> · <span class="j">Environmental Research Communications</span>, 8(4), 041014.</div></li>
+      <li><span class="yr">2022</span><div><span class="t">Black carbon over a high altitude Central Himalayan Glacier: Variability, transport, and radiative impacts</span><span class="a"><b>Sandeep, K.</b>, Panicker, A. S., Gautam, A. S., Beig, G., Gandhi, N., S, S., Shankar, R., &amp; Nainwal, H. C.</span> · <span class="j">Environmental Research</span>, 204, 112017. <a class="doi" href="https://doi.org/10.1016/j.envres.2021.112017">DOI</a></div></li>
+      <li><span class="yr">2022</span><div><span class="t">Compensatory effect of biomass burning on black carbon concentrations during COVID-19 lockdown at a high-altitude station in SW India</span><span class="a">Mukherjee, S., Verma, A., Meena, G. S., <b>Kodoli, S.</b>, Buchunde, P., Aslam, M. Y., Patil, R. D., Panicker, A., Safai, P. D., &amp; Pandithurai, G.</span> · <span class="j">Atmospheric Pollution Research</span>, 13(10), 101566. <a class="doi" href="https://doi.org/10.1016/j.apr.2022.101566">DOI</a></div></li>
+      <li><span class="yr">2021</span><div><span class="t">Black carbon over a central Himalayan Glacier (Satopanth): Pathways and direct radiative impacts</span><span class="a">Panicker, A. S., <b>Sandeep, K.</b>, Gautam, A. S., Trimbake, H. K., Nainwal, H. C., Beig, G., Bisht, D. S., &amp; Das, S.</span> · <span class="j">Science of the Total Environment</span>, 766, 144242. <a class="doi" href="https://doi.org/10.1016/j.scitotenv.2020.144242">DOI</a></div></li>
+      <li><span class="yr">2021</span><div><span class="t">Observations of black carbon and albedo over a Central Himalayan Glacier (Satopanth): Preliminary results</span><span class="a"><b>Sandeep, K.</b>, Panicker, A. S., Gautam, A. S., Safai, P. D., Beig, G., Nainwal, H. C., Bisht, D. S., &amp; Das, S.</span> · <span class="j">Journal of Atmospheric and Solar-Terrestrial Physics</span>, 216, 105580. <a class="doi" href="https://doi.org/10.1016/j.jastp.2021.105580">DOI</a></div></li>
+      <li><span class="yr">2020</span><div><span class="t">Characteristics and Variability of Carbonaceous Aerosols over a Semi Urban Location in Garhwal Himalayas</span><span class="a"><b>Sandeep, K.</b>, Negi, R. S., Panicker, A. S., Gautam, A. S., Bhist, D. S., Beig, G., Murthy, B. S., Latha, R., Singh, S., &amp; Das, S.</span> · <span class="j">Asia-Pacific Journal of Atmospheric Sciences</span>, 56(3), 455–465. <a class="doi" href="https://doi.org/10.1007/s13143-019-00158-1">DOI</a></div></li>
+      <li><span class="yr">2019</span><div><span class="t">Estimates of Carbonaceous Aerosol Radiative Forcing over a Semiurban Environment in Garhwal Himalayas</span><span class="a">Panicker, A. S., <b>Sandeep, K.</b>, Negi, R. S. et al.</span> · <span class="j">Pure and Applied Geophysics</span>, 176, 5069–5078. <a class="doi" href="https://doi.org/10.1007/s00024-019-02248-7">DOI</a></div></li>
+      <li><span class="yr">2019</span><div><span class="t">Chemical composition and isotopic signatures of ice and snow over a Himalayan Glacier (Satopanth) in India</span><span class="a">Panicker, A. S., <b>Sandeep, K.</b>, Gautam, A. S., Gandhi, N., Beig, G., Nainwal, H. C., Rao, P. S. P., Safai, P. D., Das, S., &amp; Waghmare, V.</span> · <span class="j">SN Applied Sciences</span>, 1(10), 1–7.</div></li>
+    </ol>
+
+    <h3 class="group">In preparation</h3>
+    <ol class="pubs">
+      <li><span class="yr">—</span><div><span class="t">Urban CO₂ flux estimation using sensor-based inverse modelling: Insights from Glasgow</span><span class="a"><b>Kodoli, S.</b>, Michie, C., Davison, C., Tachtatzis, C., Asimow, N., &amp; Cohen, R.</span></div></li>
+      <li><span class="yr">—</span><div><span class="t">Urban CO₂ sensor networks for Bayesian inversions with WRF–STILT: Trade-offs among modelled meteorology, spatial resolution, and flux accuracy</span><span class="a"><b>Kodoli, S.</b>, Michie, C., Davison, C., Tachtatzis, C., &amp; Cohen, R.</span></div></li>
+    </ol>
+
+    <h3 class="group">Conference presentations</h3>
+    <ol class="pubs">
+      <li><span class="yr">2025</span><div><span class="t">High-resolution urban emission mapping: Sensor-driven CO₂ inverse modeling in Glasgow</span><span class="a"><b>Kodoli, S.</b>, Michie, C., Davison, C., Tachtatzis, C., Asimow, N., &amp; Cohen, R.</span> · <span class="j">EGU General Assembly 2025</span>, Vienna, EGU25-9568. <a class="doi" href="https://doi.org/10.5194/egusphere-egu25-9568">DOI</a></div></li>
+      <li><span class="yr">2024</span><div><span class="t">Enhancing the understanding of Glasgow's emissions through inverse modeling</span><span class="a"><b>Kodoli, S.</b>, Michie, C., Davison, C., Tachtatzis, C., Asimow, N., &amp; Cohen, R.</span> · <span class="j">AGU Annual Meeting</span>.</div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <ol class="timeline">
+      <li><span class="date">Nov 2023 – now</span><div><div class="role">Postdoctoral Research Associate</div><div class="org">Department of Electronic and Electrical Engineering, University of Strathclyde, Glasgow</div></div></li>
+      <li><span class="date">2022 – 2023</span><div><div class="role">Research Associate / Project Scientist</div><div class="org">Indian Institute of Tropical Meteorology, Pune</div></div></li>
+      <li><span class="date">Feb – Aug 2020</span><div><div class="role">Guest Researcher (FLEXPART)</div><div class="org">Lund University, Sweden</div></div></li>
+      <li><span class="date">2015 – 2022</span><div><div class="role">Senior Research Fellow</div><div class="org">Indian Institute of Tropical Meteorology, Pune</div></div></li>
+      <li><span class="date">2018 – 2022</span><div><div class="role">PhD, Atmospheric Sciences</div><div class="org">Savitribai Phule Pune University</div></div></li>
+      <li><span class="date">2010 – 2013</span><div><div class="role">MSc (Tech), Physics and Photonics</div><div class="org">National Institute of Technology Calicut</div></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="talks">
+  <div class="wrap cols">
+    <div>
+      <h2>Invited talks</h2>
+      <ul>
+        <li>Urban emission estimation using inverse modelling. University of Reading, Oct 2025.</li>
+        <li>GEMINOA pitch. 10th European Conference on Sustainable Cities &amp; Towns, Aalborg.</li>
+        <li>Air quality seminar. King's Foundation, Dumfries.</li>
+        <li>Lecture series on atmospheric modelling. Government Arts and Science College, Calicut, Jul 2023.</li>
+        <li>Carbonaceous aerosol variability and transport in the Himalayas. Lund University, 2020.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Outreach and service</h2>
+      <ul>
+        <li>Over ten public talks and hands-on sessions on air quality and climate with smartSTEMS, Spark Magazine and Glasgow Science Centre.</li>
+        <li>Climate Fresk facilitator.</li>
+        <li>Reviewer for <i>JGR: Atmospheres</i> and <i>Environmental Research</i>.</li>
+        <li>CSIR-NET Lectureship, All India Rank 2 in Earth Sciences.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p style="max-width:65ch;margin:0 0 16px">I am happy to hear about collaborations on urban greenhouse gas monitoring, sensor networks and atmospheric transport modelling.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:sandeep.kodoli@strath.ac.uk">sandeep.kodoli@strath.ac.uk</a>
+      <a class="btn" href="mailto:sandeepkapsara@gmail.com">sandeepkapsara@gmail.com</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Sandeep Kodoli</span>
+    <span>University of Strathclyde, Glasgow</span>
+  </div>
+</footer>
+
+</body>
+</html>
