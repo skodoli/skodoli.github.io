@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Air, Heat and the Brain | Sandeep Kodoli</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Where my research goes next: using atmospheric modelling and sensor networks to understand how air pollution and heat affect the brain in a changing climate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column ~65ch; serif body for long-form; mono for meta */
+:root{
+  --bg:#f5f7f8; --surface:#ffffff; --ink:#15212b; --muted:#566673; --line:#d9e0e5;
+  --accent:#1f5f8b; --accent-soft:#e3edf4;
+  --display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10171d; --surface:#172129; --ink:#e4eaee; --muted:#9aabb8; --line:#2a3741;
+  --accent:#7fb6dc; --accent-soft:#1c2e3b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10171d; --surface:#172129; --ink:#e4eaee; --muted:#9aabb8; --line:#2a3741;
+  --accent:#7fb6dc; --accent-soft:#1c2e3b; color-scheme:dark}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+img{max-width:100%}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:12px}
+.brand{font-family:var(--display);font-weight:600;font-size:18px;color:var(--ink);text-decoration:none}
+.back{font-size:14px;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--ink)}
+header.post{padding-block:48px 8px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(32px,5vw,44px);line-height:1.15;text-wrap:balance;margin:0 0 16px}
+.standfirst{font-family:var(--display);font-size:20px;line-height:1.5;color:var(--muted);margin:0}
+article{font-family:var(--display);font-size:19px;line-height:1.7;padding-block:24px 48px}
+article p{margin:0 0 1.1em}
+article h2{font-family:var(--body);font-size:15px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin:2.2em 0 .8em}
+article ul{margin:0 0 1.2em;padding-left:1.2em}
+article li{margin-bottom:.5em}
+article li b{font-family:var(--body);font-size:16px;font-weight:600}
+figure.hero{margin:28px 0 8px}
+figure.hero img{display:block;width:100%;border-radius:6px;aspect-ratio:4/3;object-fit:cover}
+figure.hero figcaption{font-family:var(--body);font-size:13.5px;color:var(--muted);padding-top:8px}
+.callout{font-family:var(--body);font-size:16px;line-height:1.6;background:var(--accent-soft);border-radius:6px;padding:18px 20px;margin:1.6em 0}
+.callout p{margin:0}
+.refs{font-family:var(--body);font-size:14px;line-height:1.55;color:var(--muted);border-top:1px solid var(--line);padding-top:20px;margin-top:2.4em}
+.refs h2{margin-top:0}
+.refs ol{padding-left:1.2em;margin:0;display:grid;gap:8px}
+.refs li{overflow-wrap:anywhere}
+.sig{font-family:var(--body);font-size:15px;color:var(--muted);margin-top:2em}
+footer{border-top:1px solid var(--line);padding-block:24px 40px;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap">
+  <a class="brand" href="../index.html">Sandeep Kodoli</a>
+  <a class="back" href="../index.html#writing">← All writing</a>
+</div></div>
+
+<header class="post"><div class="wrap">
+  <p class="eyebrow">Future directions · November 2026 · 7 min read</p>
+  <h1>Air, heat and the brain: where my research goes next</h1>
+  <p class="standfirst">I have spent ten years measuring what is in the air and working out where it came from. The next question I want to work on is what it does to the brain.</p>
+</div></header>
+
+<div class="wrap">
+<figure class="hero">
+  <img src="../assets/images/instrument-tent.jpg" alt="Aerosol instruments in a tent at a Himalayan glacier site">
+  <figcaption>Black carbon instruments at the Satopanth Glacier site, central Himalaya.</figcaption>
+</figure>
+
+<article>
+<p>My PhD was about black carbon on a Himalayan glacier. We carried instruments up to about 4,000 m, ran them from a tent, and asked how soot from cooking fires and from the Indo-Gangetic Plain warms the atmosphere and darkens the ice. In Glasgow I work on a different scale. I use low-cost sensors, WRF–STILT footprints and Bayesian inversion to estimate where the city's CO₂ comes from, street by street.</p>
+
+<p>Both projects are about the same two things: measuring what is in the air, and tracing it back to its source. For most of my career the end point has been the climate. Over the last few years I have become more and more interested in a different end point, which is human health, and in particular the brain.</p>
+
+<h2>Why the brain</h2>
+
+<p>I have always read about neuroscience alongside my own field. What changed my thinking was seeing how much of the recent evidence on dementia and cognitive decline points back to the air we breathe and the temperatures we live in.</p>
+
+<p>The 2024 Lancet Commission on dementia lists 14 modifiable risk factors and estimates that about 45% of dementia cases could in principle be prevented or delayed by addressing them. Air pollution is on that list, next to hypertension, smoking and hearing loss.<sup><a href="#r1">1</a></sup> That is a striking place for an atmospheric variable to appear.</p>
+
+<p>There is also a physical route. Barbara Maher and colleagues found large numbers of magnetite nanoparticles in human brain tissue, and their shape and composition matched particles made by combustion and traffic, not by the body.<sup><a href="#r2">2</a></sup> The olfactory nerve gives very fine particles a short path from the nose to the brain. Black carbon, the pollutant I measured for six years, is made by the same kinds of combustion.</p>
+
+<p>Heat matters as well. In a US cohort of adults aged 52 and over, people with high cumulative exposure to extreme heat showed faster cognitive decline, but only in some groups: Black adults and residents of poorer neighbourhoods.<sup><a href="#r3">3</a></sup> That result says as much about housing and inequality as it does about temperature.</p>
+
+<h2>Where climate change comes in</h2>
+
+<p>A warming climate changes both exposures at once. Heatwaves raise ozone formation, and stagnant summer air traps pollution near the ground. Longer fire seasons send smoke across borders, and we have already seen Canadian wildfire smoke reach the UK. Older people, people with existing conditions and people in poor housing tend to get the highest exposures and have the least room to avoid them.</p>
+
+<p>The evidence is not settled, and I want to be careful about it. A large 2024 study linked wildfire smoke to dementia in Southern California. It was later retracted and replaced after the authors found a coding error. In the corrected version, the overall link was no longer statistically significant, though it remained for people under 75 and for some minority groups.<sup><a href="#r4">4</a></sup> I see this as science working properly, not as a reason for doubt. But it shows how much these findings depend on getting the exposure numbers right.</p>
+
+<div class="callout"><p>In many health studies, exposure is the weakest link. People are often given one annual pollution value for their home address. But what may matter for the brain are short peaks, very fine particles, time spent indoors, and heat and pollution arriving together. Those are exactly the things atmospheric models and sensor networks are built to resolve.</p></div>
+
+<h2>What I want to work on</h2>
+
+<p>This is where I think my experience is useful. I would like to build the exposure side of brain-health research to the same standard we expect for emissions verification. In practice that means:</p>
+
+<ul>
+  <li><b>Exposure at the scale people live.</b> Using dense sensor networks such as BEACO₂N, high-resolution transport modelling and indoor–outdoor measurements to estimate what people actually breathe, rather than one value per postcode.</li>
+  <li><b>Heat and pollution together.</b> Looking at compound events, such as heatwaves with high ozone or smoke, and how they relate to cognitive outcomes, hospital admissions and symptoms in people with neurological conditions.</li>
+  <li><b>Sources, not just levels.</b> Lagrangian footprints can say where polluted air came from. That turns a health finding into a policy question: which traffic, heating or burning to cut first.</li>
+  <li><b>Honest uncertainty.</b> Carrying exposure uncertainty through to health estimates, using the same Bayesian thinking I use for emission inversions, so that results are not more confident than the data allow.</li>
+</ul>
+
+<p>None of this can be done by an atmospheric scientist alone. It needs epidemiologists, neuroscientists, clinicians and people who know the cohort data well. I am now reading widely in these areas and talking to people who work in them, and I want to build those collaborations over the next few years.</p>
+
+<h2>What I am reading</h2>
+
+<p>I am working through the dementia and air pollution literature, the physiology of how particles cross into the brain, and the growing work on heat and mental and cognitive health. I will post short notes on papers I find useful here and on LinkedIn.</p>
+
+<p>If you work on brain health, epidemiology or climate and health, and think atmospheric modelling could help your work, I would be glad to hear from you.</p>
+
+<p class="sig">Sandeep Kodoli · <span style="user-select:all">sandeep.kodoli@strath.ac.uk</span></p>
+
+<div class="refs">
+<h2>References</h2>
+<ol>
+  <li id="r1">Livingston, G. et al. (2024). Dementia prevention, intervention, and care: 2024 report of the Lancet standing Commission. <i>The Lancet</i>, 404, 572–628. <a href="https://doi.org/10.1016/S0140-6736(24)01296-0">doi.org/10.1016/S0140-6736(24)01296-0</a></li>
+  <li id="r2">Maher, B. A. et al. (2016). Magnetite pollution nanoparticles in the human brain. <i>PNAS</i>, 113(39), 10797–10801. <a href="https://doi.org/10.1073/pnas.1605941113">doi.org/10.1073/pnas.1605941113</a></li>
+  <li id="r3">Choi, E. Y., Lee, H., &amp; Chang, V. W. (2023). Cumulative exposure to extreme heat and trajectories of cognitive decline among older adults in the USA. <i>Journal of Epidemiology and Community Health</i>, 77(11), 728. <a href="https://jech.bmj.com/content/77/11/728">jech.bmj.com/content/77/11/728</a></li>
+  <li id="r4">Elser, H., Casey, J. A. et al. Wildfire smoke exposure and incident dementia. <i>JAMA Neurology</i>. Published November 2024; retracted and replaced June 2025 after a coding error. <a href="https://www.nih.gov/news-events/nih-research-matters/wildfire-smoke-exposure-dementia-risk">NIH summary and correction note</a></li>
+</ol>
+</div>
+</article>
+</div>
+
+<footer><div class="wrap">© 2026 Sandeep Kodoli · <a href="../index.html">Home</a></div></footer>
+</body>
+</html>
