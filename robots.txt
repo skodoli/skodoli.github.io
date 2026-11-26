@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skodoli.github.io/sitemap.xml
